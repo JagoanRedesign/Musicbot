@@ -35,11 +35,11 @@ async def res_str(_, message: Message):
     except:
         pass
 
-    if await is_streaming(message.chat.id):
-        return await message.reply_text("ᴅɪᴅ ʏᴏᴜ ʀᴇᴍᴇᴍʙᴇʀ ᴛʜᴀᴛ ʏᴏᴜ ᴘᴀᴜsᴇᴅ ᴛʜᴇ sᴛʀᴇᴀᴍ ?")
+    if await is_streaming(message.chat.id): 
+        return await message.reply_text("ᴀᴘᴀᴋᴀʜ ᴀɴᴅᴀ ɪɴɢᴀᴛ ʙᴀʜᴡᴀ ᴀɴᴅᴀ ᴍᴇɴᴊᴇᴅᴀ ꜱᴛʀᴇᴀᴍɪɴɢ ?")
     await stream_on(message.chat.id)
     await pytgcalls.resume_stream(message.chat.id)
     return await message.reply_text(
-        text=f"➻ sᴛʀᴇᴀᴍ ʀᴇsᴜᴍᴇᴅ 💫\n│ \n└ʙʏ : {message.from_user.mention} 🥀",
+        text=f"‣ ꜱᴛʀᴇᴀᴍɪɴɢ ᴅɪʟᴀɴᴊᴜᴛᴋᴀɴ\n│ \n└ᴏʟᴇʜ : {message.from_user.mention}",
         reply_markup=close_key,
     )
