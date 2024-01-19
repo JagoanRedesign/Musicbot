@@ -46,23 +46,25 @@ async def ping_fallen(_, message: Message):
     uptime = get_readable_time((upt))
 
     await hmm.edit_text(
-        f"""➻ ᴩᴏɴɢ : `{resp}ᴍs`
+        f"""<b><u>{BOT_NAME} sʏsᴛᴇᴍ sᴛᴀᴛs :</u></b>
 
-<b><u>{BOT_NAME} sʏsᴛᴇᴍ sᴛᴀᴛs :</u></b>
-
-๏ **ᴜᴩᴛɪᴍᴇ :** {uptime}
-๏ **ʀᴀᴍ :** {mem}
-๏ **ᴄᴩᴜ :** {cpu}
-๏ **ᴅɪsᴋ :** {disk}""",
+‣ **ᴩᴏɴɢ :** `{resp}ᴍs`
+‣ **ᴜᴩᴛɪᴍᴇ :** {uptime}
+‣ **ʀᴀᴍ :** {mem}
+‣ **ᴄᴩᴜ :** {cpu}
+‣ **ᴅɪsᴋ :** {disk}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("❄ sᴜᴘᴘᴏʀᴛ ❄", url=config.SUPPORT_CHAT),
-                    InlineKeyboardButton(
-                        "✨ sᴏᴜʀᴄᴇ ✨",
-                        url="https://github.com/AnonymousX1025/FallenMusic",
-                    ),
+                    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_CHAT),
+                    InlineKeyboardButton("ɢʀᴜᴘ sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_GRUP),
                 ],
+                [
+                InlineKeyboardButton(
+                        "ᴅᴏɴᴀꜱɪ",
+                        url=config.DONASI
+                    )
+                  ],
             ]
         ),
     )
