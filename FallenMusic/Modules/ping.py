@@ -28,7 +28,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 import config
-from FallenMusic import BOT_NAME, StartTime, app
+from FallenMusic import BOT_NAME, StartTime, app, app2
 from FallenMusic.Helpers import get_readable_time
 
 
@@ -64,3 +64,19 @@ async def ping_fallen(_, message: Message):
             ]
         ),
     )
+
+
+@app.on_message(filters.me & filters.command(["ping"], prefixes=['.', '']))
+async def ping(client: Client, e: Message):       
+  upt = int(time.time() - StartTime)
+    start = datetime.now()
+    resp = (datetime.now() - start).microseconds / 1000
+    uptime = get_readable_time((upt))
+
+  Fuk = await app2.reply(
+    f"█▀█ █▀█ █▄░█ █▀▀ █ \n"
+    f"█▀▀ █▄█ █░▀█ █▄█ ▄"
+  )
+  
+
+  await Fuk.edit_text(f"<b>➠ Ping !! - </b><code>{resp}</code>ms\n<b>➠ Uptime - </b><code>{uptime}</code>\n<b>➠ User - </b> {client.me.mention}")
