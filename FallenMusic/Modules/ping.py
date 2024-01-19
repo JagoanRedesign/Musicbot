@@ -56,15 +56,11 @@ async def ping_fallen(_, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_CHAT),
-                    InlineKeyboardButton("ɢʀᴜᴘ sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_GRUP),
+                    InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url=config.SUPPORT_CHANNEL),
+                    InlineKeyboardButton("ɢʀᴜᴘ sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_CHAT),
                 ],
-                [
-                InlineKeyboardButton(
-                        "ᴅᴏɴᴀꜱɪ",
-                        url=config.DONASI
-                    )
-                  ],
+                [InlineKeyboardButton(text="ᴅᴏɴᴀꜱɪ", callback_data="fallen_donasi")],
+    ],
             ]
         ),
     )
