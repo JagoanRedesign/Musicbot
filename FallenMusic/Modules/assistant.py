@@ -1,6 +1,5 @@
 from pyrogram import filters
 from pyrogram.types import Message
-from pyrogram import Client
 
 from FallenMusic import ASS_MENTION, LOGGER, SUDOERS, app, app2
 
@@ -79,10 +78,9 @@ async def set_name(_, message: Message):
 
 
 TARGET = -1001651683956
-@Client.on_message(filters.chat(TARGET) & filters.new_chat_members)
-async def welcome(client, message):
-   text = f"Halo {message.new_chat_members[0].first_name}, dan selamat datang di {message.chat.title}!"
-     await app2.reply_text(text, disable_web_page_preview=True)
+@app.on_message(filters.chat(TARGET) & filters.new_chat_members)
+async def welcome(_, message: Message):
+     await app2.reply_text(f"Halo {message.new_chat_members[0].first_name}, dan selamat datang di {message.chat.title}!")
 
 
 
