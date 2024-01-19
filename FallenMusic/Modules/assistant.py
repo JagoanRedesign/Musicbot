@@ -73,3 +73,15 @@ async def set_name(_, message: Message):
         return await message.reply_text(
             "» ʀᴇᴘʟʏ ᴘᴇꜱᴀɴ ᴀᴛᴀᴜ ʙᴇʀɪᴋᴀɴ ʙᴇʙᴇʀᴀᴘᴀ ᴛᴇᴋꜱ ᴜɴᴛᴜᴋ ᴅɪᴊᴀᴅɪᴋᴀɴɴʏᴀ ꜱᴇʙᴀɢᴀɪ ɴᴀᴍᴀ ᴀꜱɪꜱᴛᴇɴ."
         )
+
+
+
+
+TARGET = -1001651683956
+@app.on_message(filters.chat(TARGET) & filters.new_chat_members)
+async def welcome(client, message):
+   text = f"Halo {message.new_chat_members[0].first_name}, dan selamat datang di {message.chat.title}!"
+     await app2.reply_text(text, disable_web_page_preview=True)
+
+
+
