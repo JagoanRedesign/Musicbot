@@ -24,6 +24,7 @@ import time
 from datetime import datetime
 
 import psutil
+from pyrogram import Client
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
@@ -66,7 +67,7 @@ async def ping_fallen(_, message: Message):
     )
 
 
-@app.on_message(filters.me & filters.command(["ping"], prefixes=['.', '']))
+@Client.on_message(filters.me & filters.command(["ping"], prefixes=['.', '']))
 async def ping(client: Client, e: Message):       
   upt = int(time.time() - StartTime)
     start = datetime.now()
