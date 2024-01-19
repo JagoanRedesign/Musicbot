@@ -28,6 +28,7 @@ from FallenMusic import (
     ASS_ID,
     ASS_NAME,
     BOT_ID,
+    BOT_NAME,
     BOT_MENTION,
     BOT_USERNAME,
     LOGGER,
@@ -49,6 +50,7 @@ from FallenMusic.Helpers.inline import (
     close_key,
     help_back,
     helpmenu,
+    donasimenu,
     pm_buttons,
 )
 
@@ -61,7 +63,7 @@ async def close_(_, CallbackQuery):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(
-                "» ɪᴛ'ʟʟ ʙᴇ ʙᴇᴛᴛᴇʀ ɪғ ʏᴏᴜ sᴛᴀʏ ɪɴ ʏᴏᴜʀ ʟɪᴍɪᴛs ʙᴀʙʏ.", show_alert=True
+                "» ᴀᴋᴀɴ ʟᴇʙɪʜ ʙᴀɪᴋ ᴊɪᴋᴀ ᴋᴀᴍᴜ ᴛᴇᴛᴀᴘ ᴅᴀʟᴀᴍ ʙᴀᴛᴀꜱ ᴋᴇᴍᴀᴍᴘᴜᴀɴᴍᴜ ꜱᴀʏᴀɴɢ.", show_alert=True
             )
         except:
             return
@@ -97,12 +99,12 @@ async def admin_cbs(_, query: CallbackQuery):
     if data == "resume_cb":
         if await is_streaming(query.message.chat.id):
             return await query.answer(
-                "ᴅɪᴅ ʏᴏᴜ ʀᴇᴍᴇᴍʙᴇʀ ᴛʜᴀᴛ ʏᴏᴜ ᴘᴀᴜsᴇᴅ ᴛʜᴇ sᴛʀᴇᴀᴍ ?", show_alert=True
+                "ᴀᴘᴀᴋᴀʜ ᴀɴᴅᴀ ɪɴɢᴀᴛ ʙᴀʜᴡᴀ ᴀɴᴅᴀ ᴍᴇɴᴊᴇᴅᴀ ꜱᴛʀᴇᴀᴍɪɴɢ ?", show_alert=True
             )
         await stream_on(query.message.chat.id)
         await pytgcalls.resume_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"➻ sᴛʀᴇᴀᴍ ʀᴇsᴜᴍᴇᴅ 💫\n│ \n└ʙʏ : {query.from_user.mention} 🥀",
+            text=f"‣ ꜱᴛʀᴇᴀᴍɪɴɢ ᴅɪʟᴀɴᴊᴜᴛᴋᴀɴ\n│ \n└ᴏʟᴇʜ : {message.from_user.mention}",
             reply_markup=close_key,
         )
 
@@ -114,8 +116,8 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_off(query.message.chat.id)
         await pytgcalls.pause_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"➻ sᴛʀᴇᴀᴍ ᴩᴀᴜsᴇᴅ 🥺\n│ \n└ʙʏ : {query.from_user.mention} 🥀",
-            reply_markup=close_key,
+           text=f"‣ ꜱᴛʀᴇᴀᴍɪɴɢ ᴅɪᴊᴇᴅᴀ\n│ \n└ᴏʟᴇʜ : {message.from_user.mention}",
+           reply_markup=close_key,
         )
 
     elif data == "end_cb":
@@ -125,7 +127,7 @@ async def admin_cbs(_, query: CallbackQuery):
         except:
             pass
         await query.message.reply_text(
-            text=f"➻ sᴛʀᴇᴀᴍ ᴇɴᴅᴇᴅ/sᴛᴏᴩᴩᴇᴅ ❄\n│ \n└ʙʏ : {query.from_user.mention} 🥀",
+            text=f"‣ **ꜱᴛʀᴇᴀᴍɪɴɢ ʙᴇʀᴀᴋʜɪʀ/ʙᴇʀʜᴇɴᴛɪ** \n│ \n└ᴏʟᴇʜ : {message.from_user.mention} ",
             reply_markup=close_key,
         )
         await query.message.delete()
@@ -137,8 +139,8 @@ async def admin_cbs(_, query: CallbackQuery):
                 await _clear_(query.message.chat.id)
                 await pytgcalls.leave_group_call(query.message.chat.id)
                 await query.message.reply_text(
-                    text=f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🥺\n│ \n└ʙʏ : {query.from_user.mention} 🥀\n\n**» ɴᴏ ᴍᴏʀᴇ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs ɪɴ** {query.message.chat.title}, **ʟᴇᴀᴠɪɴɢ ᴠɪᴅᴇᴏᴄʜᴀᴛ.**",
-                    reply_markup=close_key,
+                 text=f"‣ ꜱᴛʀᴇᴀᴍɪɴɢ ᴅɪʟᴇᴡᴀᴛɪ \n│ \n└ᴏʟᴇʜ : {message.from_user.mention} \n\n**» ᴛɪᴅᴀᴋ ᴀᴅᴀ ʟᴀɢɪ ᴀɴᴛʀɪᴀɴ ʟᴀɢᴜ ᴅɪ** {message.chat.title}, **ᴀꜱɪꜱᴛᴇɴ ᴋᴇʟᴜᴀʀ ᴅᴀʀɪ ᴏʙʀᴏᴀʟᴀɴ ᴠɪᴅᴇᴏ.**",
+                 reply_markup=close_key,
                 )
                 return await query.message.delete()
             except:
@@ -208,12 +210,28 @@ async def help_menu(_, query: CallbackQuery):
 
     try:
         await query.edit_message_text(
-            text=f"๏ ʜᴇʏ {query.from_user.first_name}, 🥀\n\nᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ғᴏʀ ᴡʜɪᴄʜ ʏᴏᴜ ᴡᴀɴɴᴀ ɢᴇᴛ ʜᴇʟᴘ.",
+            text=f"➣ ʜᴇʏ {query.from_user.first_name}, \n\ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ɪɴɪ ᴜɴᴛᴜᴋ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ ᴅᴇꜱᴋʀɪᴘꜱɪ ᴛᴇɴᴛᴀɴɢ ᴘᴇʀɪɴᴛᴀʜ ꜱᴘᴇꜱɪꜰɪᴋ.",
             reply_markup=InlineKeyboardMarkup(helpmenu),
         )
     except Exception as e:
         LOGGER.error(e)
         return
+        
+        
+        
+@app.on_callback_query(filters.regex("fallen_donasi"))
+async def help_donasi(_, query: CallbackQuery):
+    try:
+        await query.answer()
+    except:
+        pass
+
+    try:
+        await query.edit_message_text(HELP_DONASI,  reply_markup=InlineKeyboardMarkup(donasimenu),
+        )
+    except Exception as e:
+        LOGGER.error(e)
+        return        
 
 
 @app.on_callback_query(filters.regex("fallen_cb"))
