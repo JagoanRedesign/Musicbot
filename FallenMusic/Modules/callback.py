@@ -167,12 +167,12 @@ async def admin_cbs(_, query: CallbackQuery):
 
             img = await gen_thumb(videoid, user_id)
             await query.edit_message_text(
-                text=f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🥺\n│ \n└ʙʏ : {query.from_user.mention} 🥀",
+                text=f"‣ ꜱᴛʀᴇᴀᴍɪɴɢ ᴅɪʟᴇᴡᴀᴛɪ \n│ \n└ᴏʟᴇʜ : {query.from_user.mention}",
                 reply_markup=close_key,
             )
             return await query.message.reply_photo(
                 photo=img,
-                caption=f"**➻ sᴛᴀʀᴛᴇᴅ sᴛʀᴇᴀᴍɪɴɢ**\n\n‣ **ᴛɪᴛʟᴇ :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` ᴍɪɴᴜᴛᴇs\n‣ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {req_by}",
+                caption=f"**‣ ᴍᴇᴍᴜʟᴀɪ ꜱᴛʀᴇᴀᴍɪɴɢ**\n\n‣ **ᴊᴜᴅᴜʟ :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **ᴅᴜʀᴀꜱɪ :** `{duration}` ᴍᴇɴɪᴛ\n‣ **ᴅɪᴍɪɴᴛᴀ ᴏʟᴇʜ :** {req_by}",
                 reply_markup=buttons,
             )
 
@@ -192,11 +192,11 @@ async def unban_ass(_, CallbackQuery):
                 show_alert=True,
             )
         return await CallbackQuery.edit_message_text(
-            f"➻ {ASS_NAME} sᴜᴄᴄᴇssғᴜʟʟʏ ᴜɴʙᴀɴɴᴇᴅ ʙʏ {CallbackQuery.from_user.mention}.\n\nᴛʀʏ ᴘʟᴀʏɪɴɢ ɴᴏᴡ..."
+            f"➣ {ASS_NAME} ʙᴇʀʜᴀꜱɪʟ ᴅɪ ᴜɴʙᴀɴ ᴏʟᴇʜ {CallbackQuery.from_user.mention}.\n\nᴄᴏʙᴀ ᴍᴀɪɴᴋᴀɴ ꜱᴇᴋᴀʀᴀɴɢ..."
         )
     else:
         return await CallbackQuery.answer(
-            "» ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ᴜɴʙᴀɴ ᴜsᴇʀs ɪɴ ᴛʜɪs ᴄʜᴀᴛ.",
+            "» ꜱᴀʏᴀ ᴛɪᴅᴀᴋ ᴘᴜɴʏᴀ ɪᴢɪɴ ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴀᴛᴀʟᴋᴀɴ ᴘᴇᴍʙʟᴏᴋɪʀᴀɴ ᴘᴇɴɢɢᴜɴᴀ ᴅᴀʟᴀᴍ ᴏʙʀᴏʟᴀɴ ɪɴɪ.",
             show_alert=True,
         )
 
