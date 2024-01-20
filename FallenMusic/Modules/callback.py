@@ -210,7 +210,7 @@ async def help_menu(_, query: CallbackQuery):
 
     try:
         await query.edit_message_text(
-            text=f"➣ ʜᴇʏ {query.from_user.first_name}, \n\ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ɪɴɪ ᴜɴᴛᴜᴋ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ ᴅᴇꜱᴋʀɪᴘꜱɪ ᴛᴇɴᴛᴀɴɢ ᴘᴇʀɪɴᴛᴀʜ ꜱᴘᴇꜱɪꜰɪᴋ.",
+            text=f"➣ ʜᴇʏ {query.from_user.first_name}, \nᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ɪɴɪ ᴜɴᴛᴜᴋ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ ᴅᴇꜱᴋʀɪᴘꜱɪ ᴛᴇɴᴛᴀɴɢ ᴘᴇʀɪɴᴛᴀʜ ꜱᴘᴇꜱɪꜰɪᴋ.",
             reply_markup=InlineKeyboardMarkup(helpmenu),
         )
     except Exception as e:
